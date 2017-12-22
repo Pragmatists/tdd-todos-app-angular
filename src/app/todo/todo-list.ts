@@ -1,9 +1,7 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {Todo} from "./todo";
 
-
-class Todo {
-}
 
 class TodoListResponse {
     todos: Todo[]

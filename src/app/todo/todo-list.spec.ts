@@ -9,7 +9,12 @@ describe('Todo List', () => {
     beforeEach(async(() => {
         app = test(TodoListModule);
         http().get('/todos', (req: Req) => {
-            req.sendStatus(200)
+            req.sendJson({
+                todos: [
+                    {id: 1, title: 'Walk the first dog', completed: false},
+                    {id: 2, title: 'Walk the second dog', completed: false},
+                ]
+            })
         });
     }));
 
@@ -22,19 +27,19 @@ describe('Todo List', () => {
     }));
 
     it('shows the number of todos left', async(() => {
-        http().get('/todos', (req: Req) => {
-            req.sendJson({
-                todos: [
-                    {id: 1, title: 'Walk the first dog', completed: false},
-                    {id: 2, title: 'Walk the second dog', completed: false},
-                ]
-            })
-        });
         const comp = app.run(TodoListComponent);
 
         comp.verify(
             expectThat.textOf('[data-todos-count]').isEqualTo('Wow! Only 2 todos left!')
         )
 
+    }))
+
+    it('renders a list of todos', async(() => {
+        const comp = app.run(TodoListComponent);
+
+        comp.verify(
+            expectThat.textsOf('todo-item h1').areEqualTo(['Walk the first dog', 'Walk the second dog'])
+        )
     }))
 });
