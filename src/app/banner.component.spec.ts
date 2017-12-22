@@ -2,7 +2,7 @@ import test, {App, expectThat} from 'ng-test-runner';
 
 import {NgModule} from '@angular/core';
 import {async} from '@angular/core/testing';
-import {BannerComponent} from "./app.component";
+import {BannerComponent} from "./banner.component";
 
 
 @NgModule({
