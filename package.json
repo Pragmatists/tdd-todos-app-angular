@@ -1,0 +1,38 @@
+{
+  "name": "ng-test-runner-demos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "author": "Krzysztof Jelski <krzysztof.jelski@pragmatists.pl>",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/animations": "^5.1.2",
+    "@angular/common": "^5.1.2",
+    "@angular/compiler": "^5.1.2",
+    "@angular/core": "^5.1.2",
+    "@angular/forms": "^5.1.2",
+    "@angular/http": "^5.1.2",
+    "@angular/platform-browser": "^5.1.2",
+    "@angular/platform-browser-dynamic": "^5.1.2",
+    "@angular/router": "^5.1.2",
+    "rxjs": "^5.5.5"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.2",
+    "jasmine": "^2.8.0",
+    "jasmine-core": "^2.8.0",
+    "jest": "^22.0.3",
+    "jest-preset-angular": "^5.0.0",
+    "ng-test-runner": "git+https://github.com/Pragmatists/ng-test-runner.git",
+    "ts-jest": "^22.0.0",
+    "typescript": "^2.6.2",
+    "zone.js": "^0.8.18"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts"
+  }
+}
