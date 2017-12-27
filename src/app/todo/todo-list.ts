@@ -1,6 +1,8 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Todo} from "./todo";
+import {TodoItemModule} from "./todo-item";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 class TodoListResponse {
@@ -31,7 +33,7 @@ export class TodoListComponent implements OnInit {
 
 @NgModule({
     declarations: [TodoListComponent],
-    imports: [HttpClientModule],
+    imports: [HttpClientModule, TodoItemModule, BrowserModule],
     exports: [TodoListComponent]
 })
 export class TodoListModule {
