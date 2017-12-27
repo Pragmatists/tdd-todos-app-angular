@@ -17,8 +17,10 @@ export class TodoListComponent implements OnInit {
 
     ngOnInit(): void {
         this.http.get<TodoListResponse>('/todos')
-            .subscribe(v => {
-                this.todos = v.todos;
+            .subscribe(data => {
+                this.todos = data.todos;
+            }, error => {
+                this.todos = [];
             })
     }
 

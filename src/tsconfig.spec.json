@@ -15,6 +15,6 @@
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts",
-    "ng-test-runner/**/*.ts"
+    "../node_module/ng-test-runner"
   ]
 }
