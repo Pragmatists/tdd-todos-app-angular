@@ -5,6 +5,7 @@
   "main": "index",
   "scripts": {
     "start": "ng serve",
+    "backend": "json-server http://jsonplaceholder.typicode.com/db",
     "test": "jest --watchAll"
   },
   "author": "Krzysztof Jelski <krzysztof.jelski@pragmatists.pl>",

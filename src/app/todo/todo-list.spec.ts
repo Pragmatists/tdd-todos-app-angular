@@ -12,13 +12,13 @@ describe('Todo List', () => {
 
     describe("with running server", () => {
         beforeEach(async(() => {
-            http().get('/todos', (req: Req) => {
-                req.sendJson({
-                    todos: [
+            http().get('http://localhost:3000/todos', (req: Req) => {
+                req.sendJson(
+                    [
                         {id: 1, title: 'Walk the first dog', completed: false},
                         {id: 2, title: 'Walk the second dog', completed: false},
                     ]
-                })
+                )
             });
         }));
 
@@ -52,7 +52,7 @@ describe('Todo List', () => {
     describe("without a server", () => {
 
         beforeEach(async(() => {
-            http().get('/todos', (req: Req) => {
+            http().get('http://localhost:3000/todos', (req: Req) => {
                 req.sendStatus(404);
             });
         }));

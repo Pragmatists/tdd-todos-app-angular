@@ -5,9 +5,7 @@ import {TodoItemModule} from "./todo-item";
 import {BrowserModule} from "@angular/platform-browser";
 
 
-class TodoListResponse {
-    todos: Todo[]
-}
+type TodoListResponse = Todo[];
 
 @Component({
     templateUrl: 'todo-list.html'
@@ -16,10 +14,11 @@ export class TodoListComponent implements OnInit {
     private todos: Todo[];
 
     ngOnInit(): void {
-        this.http.get<TodoListResponse>('/todos')
+        this.http.get<TodoListResponse>('http://localhost:3000/todos')
             .subscribe(data => {
-                this.todos = data.todos;
+                this.todos = data;
             }, error => {
+                console.log(error);
                 this.todos = [];
             })
     }
