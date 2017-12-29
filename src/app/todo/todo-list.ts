@@ -1,40 +1,24 @@
-import {Component, NgModule, OnInit} from '@angular/core';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {Component, Input, NgModule} from '@angular/core';
 import {Todo} from "./todo";
 import {TodoItemModule} from "./todo-item";
 import {BrowserModule} from "@angular/platform-browser";
 
 
-type TodoListResponse = Todo[];
-
 @Component({
-    templateUrl: 'todo-list.html'
+    templateUrl: 'todo-list.html',
+    selector: 'todo-list'
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent {
+
+    @Input()
     private todos: Todo[];
 
-    ngOnInit(): void {
-        this.http.get<TodoListResponse>('http://localhost:3000/todos')
-            .subscribe(data => {
-                this.todos = data;
-            }, error => {
-                console.log(error);
-                this.todos = [];
-            })
-    }
-
-    constructor(private http: HttpClient) {
-    }
-
-    get todosCount(): number {
-        return this.todos ? this.todos.length : 0;
-    }
 }
 
 
 @NgModule({
     declarations: [TodoListComponent],
-    imports: [HttpClientModule, TodoItemModule, BrowserModule],
+    imports: [TodoItemModule, BrowserModule],
     exports: [TodoListComponent]
 })
 export class TodoListModule {

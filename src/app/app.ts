@@ -2,17 +2,19 @@ import {NgModule} from "@angular/core";
 import {TodosAppComponent} from "./app.component";
 import {RouterModule} from "@angular/router";
 import {APP_BASE_HREF} from "@angular/common";
-import {TodoListComponent, TodoListModule} from "./todo/todo-list";
+import {TodoNewComponent, TodoNewModule} from "./todo/todo-new";
+import {TodosComponent, TodosModule} from "./todo/todos";
 
 const routes = [
-    {path: '', component: TodoListComponent},
+    {path: '', component: TodosComponent},
+    {path: 'new', component: TodoNewComponent},
     {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
     declarations: [TodosAppComponent],
     exports: [TodosAppComponent],
-    imports: [RouterModule.forRoot(routes), TodoListModule],
+    imports: [RouterModule.forRoot(routes), TodosModule, TodoNewModule],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}],
     bootstrap: [TodosAppComponent]
 })

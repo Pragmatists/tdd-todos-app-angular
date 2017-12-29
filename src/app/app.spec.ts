@@ -23,4 +23,19 @@ describe("Todos App", () => {
             expectThat.elements('h1').isNotEmpty()
         )
     }));
+
+    // works in Karma but not in Jest
+    xit('navigates to new', async(() => {
+        let comp = app.run(TodosAppComponent);
+
+        comp.perform(
+            navigateToUrl('/new')
+        );
+
+        comp.verify(
+            expectThat.location.isEqualTo('/new'),
+            expectThat.elements('form').isNotEmpty()
+        )
+    }));
+
 });
