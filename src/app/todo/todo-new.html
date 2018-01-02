@@ -1,6 +1,8 @@
-<div data-result>{{saveResult}}</div>
-<form (ngSubmit)="onSave()" #form="ngForm">
-    <input type="text" title="What do you need to do?" name="title" ngModel>
-    <button type="submit">Save</button>
-</form>
-<a href="/">Back</a>
+<div class="col-md-offset-2 col-md-8">
+    <div data-result>{{saveResult}}</div>
+    <form (ngSubmit)="onSave()" #form="ngForm">
+        <input type="text" title="What do you need to do?" name="title" ngModel>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="/" class="btn btn-primary" role="button">Back</a>
+</div>

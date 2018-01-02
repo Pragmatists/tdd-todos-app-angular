@@ -1,6 +1,7 @@
 import {Component, NgModule, ViewChild} from "@angular/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {FormsModule, NgForm} from "@angular/forms";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap"
 
 @Component({
     templateUrl: 'todo-new.html'
@@ -23,7 +24,7 @@ export class TodoNewComponent {
 
 @NgModule({
     declarations: [TodoNewComponent],
-    imports: [HttpClientModule, FormsModule],
+    imports: [HttpClientModule, FormsModule, NgbModule],
     exports: [TodoNewComponent]
 })
 export class TodoNewModule{}

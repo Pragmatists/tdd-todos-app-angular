@@ -45,7 +45,6 @@ describe('Todos component', () => {
                 )
             });
 
-
             const comp = app.run(TodosComponent);
 
             comp.verify(

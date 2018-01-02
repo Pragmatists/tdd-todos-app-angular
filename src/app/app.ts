@@ -4,6 +4,7 @@ import {RouterModule} from "@angular/router";
 import {APP_BASE_HREF} from "@angular/common";
 import {TodoNewComponent, TodoNewModule} from "./todo/todo-new";
 import {TodosComponent, TodosModule} from "./todo/todos";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes = [
     {path: '', component: TodosComponent},
@@ -14,7 +15,7 @@ const routes = [
 @NgModule({
     declarations: [TodosAppComponent],
     exports: [TodosAppComponent],
-    imports: [RouterModule.forRoot(routes), TodosModule, TodoNewModule],
+    imports: [RouterModule.forRoot(routes), TodosModule, TodoNewModule, NgbModule.forRoot()],
     providers: [{provide: APP_BASE_HREF, useValue: '/'}],
     bootstrap: [TodosAppComponent]
 })
