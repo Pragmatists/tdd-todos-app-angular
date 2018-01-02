@@ -10,7 +10,6 @@ describe('Todo List', () => {
         app = test(TodoListModule);
     }));
 
-
     it('renders a list of todos', async(() => {
         const comp = app.run(TodoListComponent, {
             todos: [
@@ -20,9 +19,8 @@ describe('Todo List', () => {
         });
 
         comp.verify(
-            expectThat.textsOf('todo-item h1').areEqualTo(['Walk the first dog', 'Walk the second dog'])
+            expectThat.textsOf('[data-todo-title]').areEqualTo(['Walk the first dog', 'Walk the second dog'])
         )
     }));
-
 
 });
