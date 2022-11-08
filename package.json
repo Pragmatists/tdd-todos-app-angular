@@ -27,7 +27,7 @@
     "jquery": "^1.9.1"
   },
   "devDependencies": {
-    "@angular/cli": "^1.6.2",
+    "@angular/cli": "^14.2.8",
     "@angular/compiler-cli": "^5.1.2",
     "@types/jasmine": "^2.8.2",
     "jasmine": "^2.8.0",
